@@ -1,0 +1,4 @@
+AutoRemoveObserver
+==================
+
+AutoRemoveObserver
