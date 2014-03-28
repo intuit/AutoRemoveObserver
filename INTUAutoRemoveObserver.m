@@ -1,5 +1,5 @@
 //
-//  iOSAutoRemoveObserver.m
+//  INTUAutoRemoveObserver.m
 //
 //  Created by Jeff Shulman on 3/18/14.
 //	Copyright (c) 2014 Intuit Inc
@@ -23,10 +23,10 @@
 //	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "iOSAutoRemoveObserver.h"
+#import "INTUAutoRemoveObserver.h"
 #import <objc/runtime.h>
 
-@interface iOSAutoRemoveObserver ()
+@interface INTUAutoRemoveObserver ()
 
 // The observer is "unsafe_unretained" since we don't want a strong reference to change the
 // observer refcount and we don't want to be weak since our dealloc will be called after
@@ -47,12 +47,12 @@
 
 @end
 
-@implementation iOSAutoRemoveObserver
+@implementation INTUAutoRemoveObserver
 
 +(void)addObserver:(id)notificationObserver selector:(SEL)notificationSelector name:(NSString *)notificationName object:(id)notificationSender
 {
 	// Create the remover object
-	iOSAutoRemoveObserver* remover = [[iOSAutoRemoveObserver alloc] init];
+	INTUAutoRemoveObserver* remover = [[INTUAutoRemoveObserver alloc] init];
 	remover.notificationObserver = notificationObserver;
 	remover.notificationName = notificationName;
 	remover.notificationSender = notificationSender;
@@ -70,7 +70,7 @@
 +(void)addObserver:(id)notificationObserver forName:(NSString *)name object:(id)obj queue:(NSOperationQueue *)queue usingBlock:(void (^)(NSNotification *))block;
 {
 	// Create the remover object
-	iOSAutoRemoveObserver* remover = [[iOSAutoRemoveObserver alloc] init];
+	INTUAutoRemoveObserver* remover = [[INTUAutoRemoveObserver alloc] init];
 	
 	id blockObserver = [[NSNotificationCenter defaultCenter] addObserverForName:name
 																		 object:obj
@@ -86,7 +86,7 @@
 +(void)addObserver:(NSObject*)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context onReceiverObject:(NSObject*)receiverObject
 {
 	// Create the remover object
-	iOSAutoRemoveObserver* remover = [[iOSAutoRemoveObserver alloc] init];
+	INTUAutoRemoveObserver* remover = [[INTUAutoRemoveObserver alloc] init];
 	remover.keyPath = keyPath;
 	remover.notificationObserver = anObserver;
 	remover.receiverObject = receiverObject;

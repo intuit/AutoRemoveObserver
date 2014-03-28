@@ -25,7 +25,7 @@
 //	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "ViewController.h"
-#import "iOSAutoRemoveObserver.h"
+#import "INTUAutoRemoveObserver.h"
 #import "TestReceiver.h"
 
 @interface ViewController ()
@@ -44,7 +44,7 @@
 	
 	self.aTestReceiver = [TestReceiver new];
 	
-	[iOSAutoRemoveObserver addObserver:self.aTestReceiver selector:@selector(observeMe) name:@"Broadcast" object:nil];
+	[INTUAutoRemoveObserver addObserver:self.aTestReceiver selector:@selector(observeMe) name:@"Broadcast" object:nil];
 }
 
 - (IBAction)postNotification:(id)sender
@@ -81,7 +81,7 @@
 		self.aTestReceiver = [TestReceiver new];
 	}
 	
-	[iOSAutoRemoveObserver addObserver:self.aTestReceiver
+	[INTUAutoRemoveObserver addObserver:self.aTestReceiver
 							forKeyPath:NSStringFromSelector(@selector(testString))
 							   options:NSKeyValueObservingOptionNew
 							   context:nil

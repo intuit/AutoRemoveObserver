@@ -16,7 +16,7 @@
 		7F32FA5518E3A15500BF3FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F32FA5318E3A15500BF3FF4 /* Main.storyboard */; };
 		7F32FA5818E3A15500BF3FF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32FA5718E3A15500BF3FF4 /* ViewController.m */; };
 		7F32FA5A18E3A15500BF3FF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F32FA5918E3A15500BF3FF4 /* Images.xcassets */; };
-		7F32FA7818E3A16D00BF3FF4 /* iOSAutoRemoveObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32FA7718E3A16D00BF3FF4 /* iOSAutoRemoveObserver.m */; };
+		7F32FA7818E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32FA7718E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m */; };
 		7F32FA7B18E3A27B00BF3FF4 /* TestReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32FA7A18E3A27B00BF3FF4 /* TestReceiver.m */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +36,8 @@
 		7F32FA5718E3A15500BF3FF4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7F32FA5918E3A15500BF3FF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7F32FA6018E3A15500BF3FF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7F32FA7618E3A16D00BF3FF4 /* iOSAutoRemoveObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOSAutoRemoveObserver.h; path = ../iOSAutoRemoveObserver.h; sourceTree = "<group>"; };
-		7F32FA7718E3A16D00BF3FF4 /* iOSAutoRemoveObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOSAutoRemoveObserver.m; path = ../iOSAutoRemoveObserver.m; sourceTree = "<group>"; };
+		7F32FA7618E3A16D00BF3FF4 /* INTUAutoRemoveObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INTUAutoRemoveObserver.h; path = ../INTUAutoRemoveObserver.h; sourceTree = "<group>"; };
+		7F32FA7718E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INTUAutoRemoveObserver.m; path = ../INTUAutoRemoveObserver.m; sourceTree = "<group>"; };
 		7F32FA7918E3A27B00BF3FF4 /* TestReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestReceiver.h; sourceTree = "<group>"; };
 		7F32FA7A18E3A27B00BF3FF4 /* TestReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestReceiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,8 +59,8 @@
 		7F32FA3518E3A15500BF3FF4 = {
 			isa = PBXGroup;
 			children = (
-				7F32FA7618E3A16D00BF3FF4 /* iOSAutoRemoveObserver.h */,
-				7F32FA7718E3A16D00BF3FF4 /* iOSAutoRemoveObserver.m */,
+				7F32FA7618E3A16D00BF3FF4 /* INTUAutoRemoveObserver.h */,
+				7F32FA7718E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m */,
 				7F32FA4718E3A15500BF3FF4 /* Example */,
 				7F32FA4018E3A15500BF3FF4 /* Frameworks */,
 				7F32FA3F18E3A15500BF3FF4 /* Products */,
@@ -178,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F32FA7818E3A16D00BF3FF4 /* iOSAutoRemoveObserver.m in Sources */,
+				7F32FA7818E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m in Sources */,
 				7F32FA7B18E3A27B00BF3FF4 /* TestReceiver.m in Sources */,
 				7F32FA5818E3A15500BF3FF4 /* ViewController.m in Sources */,
 				7F32FA5218E3A15500BF3FF4 /* AppDelegate.m in Sources */,
@@ -323,6 +323,7 @@
 				7F32FA7218E3A15500BF3FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

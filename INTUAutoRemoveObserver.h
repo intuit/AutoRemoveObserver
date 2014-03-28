@@ -1,5 +1,5 @@
 //
-//  iOSAutoRemoveObserver.h
+//  INTUAutoRemoveObserver.h
 //
 //  Created by Jeff Shulman on 3/18/14.
 //	Copyright (c) 2014 Intuit Inc
@@ -54,20 +54,20 @@
 //	you write:
 //
 //		// Selector based
-//		[iOSAutoRemoveObserver addObserver:notificationObserver
+//		[INTUAutoRemoveObserver addObserver:notificationObserver
 //								   selector:notificationSelector
 //									   name:notificationName
 //									 object:notificationSender];
 //
 //		// Block based
-//		[iOSAutoRemoveObserver addObserver:self
+//		[INTUAutoRemoveObserver addObserver:self
 //									forName:name
 //									 object:obj
 //									  queue:queue
 //								 usingBlock:block];
 //
 //		// KVO
-//		[iOSAutoRemoveObserver addObserver:anObserver
+//		[INTUAutoRemoveObserver addObserver:anObserver
 //								 forKeyPath:keyPath
 //									options:options
 //									context:context
@@ -76,14 +76,14 @@
 //	E.g.:
 //
 //		// Selector based
-//		[iOSAutoRemoveObserver addObserver:self
+//		[INTUAutoRemoveObserver addObserver:self
 //								   selector:@selector(myMethod)
 //									   name:@"BroadcastNotification"
 //									 object:nil];
 //
 //		// Block based
 //		MyObject* __weak weakSelf = self;		// So the block doesn't retain us
-//		[iOSAutoRemoveObserver addObserver:self
+//		[INTUAutoRemoveObserver addObserver:self
 //									forName:@"BroadcastNotification"
 //									 object:nil
 //									  queue:[NSOperationQueue mainQueue]
@@ -92,7 +92,7 @@
 //									 }];
 //
 //		// KVO
-//		[iOSAutoRemoveObserver addObserver:self		// self or some observer object. When this is dealloc'ed then observer is removed.
+//		[INTUAutoRemoveObserver addObserver:self		// self or some observer object. When this is dealloc'ed then observer is removed.
 //								 forKeyPath:NSStringFromSelector(@selector(myProperty))
 //									options:NSKeyValueObservingOptionNew
 //									context:nil
@@ -104,7 +104,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface iOSAutoRemoveObserver : NSObject
+@interface INTUAutoRemoveObserver : NSObject
 
 // Notification Center observers
 +(void)addObserver:(id)notificationObserver selector:(SEL)notificationSelector name:(NSString *)notificationName object:(id)notificationSender;

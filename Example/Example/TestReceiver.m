@@ -25,7 +25,7 @@
 //	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "TestReceiver.h"
-#import "iOSAutoRemoveObserver.h"
+#import "INTUAutoRemoveObserver.h"
 
 @implementation TestReceiver
 
@@ -41,7 +41,7 @@
 	NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
 	__typeof(self) __weak weakSelf = self;
 	
-	[iOSAutoRemoveObserver addObserver:self
+	[INTUAutoRemoveObserver addObserver:self
 							   forName:@"Broadcast"
 								object:nil
 								 queue:mainQueue
@@ -53,7 +53,7 @@
 
 -(void)addKVOObserver
 {
-	[iOSAutoRemoveObserver addObserver:self forKeyPath:NSStringFromSelector(@selector(myString)) options:NSKeyValueObservingOptionNew context:nil onReceiverObject:self];
+	[INTUAutoRemoveObserver addObserver:self forKeyPath:NSStringFromSelector(@selector(myString)) options:NSKeyValueObservingOptionNew context:nil onReceiverObject:self];
 }
 
 -(void)dealloc
