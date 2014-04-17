@@ -51,11 +51,6 @@
 							}];
 }
 
--(void)addKVOObserver
-{
-	[INTUAutoRemoveObserver addObserver:self forKeyPath:NSStringFromSelector(@selector(myString)) options:NSKeyValueObservingOptionNew context:nil onReceiverObject:self];
-}
-
 -(void)dealloc
 {
 	NSLog(@"TestReceiver dealloc");

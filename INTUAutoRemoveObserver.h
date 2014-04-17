@@ -23,7 +23,7 @@
 //	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//	The problem with NotificationCenter and KVO observers is that you have to remember to remove
+//	The problem with NotificationCenter observers is that you have to remember to remove
 //	the observing object when it gets dealloc'ed or your app will crash on the next notification.
 //
 //	The methods below create a small "remover" object that is associated with the observer object
@@ -48,9 +48,6 @@
 //														   queue:queue
 //													  usingBlock:block];
 //
-//		// KVO
-//		[self addObserver:anObserver forKeyPath:keyPath options:options context:context];
-//
 //	you write:
 //
 //		// Selector based
@@ -65,13 +62,6 @@
 //									 object:obj
 //									  queue:queue
 //								 usingBlock:block];
-//
-//		// KVO
-//		[INTUAutoRemoveObserver addObserver:anObserver
-//								 forKeyPath:keyPath
-//									options:options
-//									context:context
-//						   onReceiverObject:self];
 //
 //	E.g.:
 //
@@ -90,17 +80,6 @@
 //								 usingBlock:^(NSNotification *note) {
 //											 [weakSelf observeMe];
 //									 }];
-//
-//		// KVO
-//		[INTUAutoRemoveObserver addObserver:self		// self or some observer object. When this is dealloc'ed then observer is removed.
-//								 forKeyPath:NSStringFromSelector(@selector(myProperty))
-//									options:NSKeyValueObservingOptionNew
-//									context:nil
-//						   onReceiverObject:self];
-//
-//		N.B.: If the observer is self you will see a error in the log file about the instance being deallocated while key
-//		observers were still registered to it (even though they are removed as a side effect of self getting dealloc'ed)
-//		when self is dealloc'ed.
 
 #import <Foundation/Foundation.h>
 
@@ -110,8 +89,5 @@
 +(void)addObserver:(id)notificationObserver selector:(SEL)notificationSelector name:(NSString *)notificationName object:(id)notificationSender;
 
 +(void)addObserver:(id)notificationObserver forName:(NSString *)name object:(id)obj queue:(NSOperationQueue *)queue usingBlock:(void (^)(NSNotification * note))block;
-
-// KVO Observing
-+(void)addObserver:(NSObject*)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context onReceiverObject:(NSObject*)receiverObject;
 
 @end

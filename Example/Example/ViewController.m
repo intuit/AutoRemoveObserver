@@ -73,37 +73,4 @@
 	[self.aTestReceiver addBlockObserver];
 }
 
-- (IBAction)addKVOObserver:(id)sender
-{
-	NSLog(@"addKVOObserver");
-	if (!self.aTestReceiver) {
-		NSLog(@"Creating new TestReceiver");
-		self.aTestReceiver = [TestReceiver new];
-	}
-	
-	[INTUAutoRemoveObserver addObserver:self.aTestReceiver
-							forKeyPath:NSStringFromSelector(@selector(testString))
-							   options:NSKeyValueObservingOptionNew
-							   context:nil
-					  onReceiverObject:self];
-}
-
-- (IBAction)addSelfKVO:(id)sender
-{
-	NSLog(@"addSelfKVO");
-	if (!self.aTestReceiver) {
-		NSLog(@"Creating new TestReceiver");
-		self.aTestReceiver = [TestReceiver new];
-	}
-	
-	[self.aTestReceiver addKVOObserver];
-}
-
-- (IBAction)changeKVO:(id)sender
-{
-	NSLog(@"changeKVO");
-	self.aTestReceiver.myString = @"Baz";
-}
-
-
 @end

@@ -33,6 +33,5 @@
 -(void)observeMe;
 
 -(void)addBlockObserver;
--(void)addKVOObserver;
 
 @end

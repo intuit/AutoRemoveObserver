@@ -24,7 +24,6 @@
 //	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "INTUAutoRemoveObserver.h"
-#import "INTUWeakForwarder.h"
 #import <objc/runtime.h>
 
 @interface INTUAutoRemoveObserver ()
@@ -39,12 +38,6 @@
 
 // This is to store a reference to any block created observer
 @property (nonatomic, strong) id blockObserver;
-
-// This is to store the key path on any KVO created observer
-@property (nonatomic, copy) NSString* keyPath;
-
-// This is to store the receiver object on any KVO created observer
-@property (nonatomic, strong) NSObject* receiverObject;
 
 @end
 
@@ -84,28 +77,9 @@
 	remover.blockObserver = blockObserver;
 }
 
-+(void)addObserver:(NSObject*)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context onReceiverObject:(NSObject*)receiverObject
-{
-	// Create the remover object
-	INTUAutoRemoveObserver* remover = [[INTUAutoRemoveObserver alloc] init];
-	remover.keyPath = keyPath;
-	remover.notificationObserver = anObserver;
-	remover.receiverObject = [INTUWeakForwarder forwardTo:receiverObject associatedWith:remover];
-	
-	// Keep this object around for the lifetime of the observer object
-	objc_setAssociatedObject(anObserver, (__bridge const void *)(remover), remover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-	
-	// Now register for the notification
-	[remover.receiverObject addObserver:remover.notificationObserver forKeyPath:remover.keyPath options:options context:context];
-}
-
 -(void)dealloc
 {
-	if ( self.keyPath ) {
-		// A KVO observer
-		[self.receiverObject removeObserver:self.notificationObserver forKeyPath:self.keyPath];
-	}
-	else if ( self.blockObserver ) {
+	if ( self.blockObserver ) {
 		// A block based notification center observer
 		[[NSNotificationCenter defaultCenter] removeObserver:self.blockObserver];
 	}
