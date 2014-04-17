@@ -24,6 +24,7 @@
 //	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "INTUAutoRemoveObserver.h"
+#import "INTUWeakForwarder.h"
 #import <objc/runtime.h>
 
 @interface INTUAutoRemoveObserver ()
@@ -89,7 +90,7 @@
 	INTUAutoRemoveObserver* remover = [[INTUAutoRemoveObserver alloc] init];
 	remover.keyPath = keyPath;
 	remover.notificationObserver = anObserver;
-	remover.receiverObject = receiverObject;
+	remover.receiverObject = [INTUWeakForwarder forwardTo:receiverObject associatedWith:remover];
 	
 	// Keep this object around for the lifetime of the observer object
 	objc_setAssociatedObject(anObserver, (__bridge const void *)(remover), remover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

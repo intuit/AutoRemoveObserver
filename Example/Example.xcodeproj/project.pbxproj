@@ -18,6 +18,7 @@
 		7F32FA5A18E3A15500BF3FF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F32FA5918E3A15500BF3FF4 /* Images.xcassets */; };
 		7F32FA7818E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32FA7718E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m */; };
 		7F32FA7B18E3A27B00BF3FF4 /* TestReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F32FA7A18E3A27B00BF3FF4 /* TestReceiver.m */; };
+		7F5F64231900705D001E9C3C /* INTUWeakForwarder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F64221900705D001E9C3C /* INTUWeakForwarder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		7F32FA7718E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INTUAutoRemoveObserver.m; path = ../INTUAutoRemoveObserver.m; sourceTree = "<group>"; };
 		7F32FA7918E3A27B00BF3FF4 /* TestReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestReceiver.h; sourceTree = "<group>"; };
 		7F32FA7A18E3A27B00BF3FF4 /* TestReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestReceiver.m; sourceTree = "<group>"; };
+		7F5F64211900705D001E9C3C /* INTUWeakForwarder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTUWeakForwarder.h; sourceTree = "<group>"; };
+		7F5F64221900705D001E9C3C /* INTUWeakForwarder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INTUWeakForwarder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			children = (
 				7F32FA7618E3A16D00BF3FF4 /* INTUAutoRemoveObserver.h */,
 				7F32FA7718E3A16D00BF3FF4 /* INTUAutoRemoveObserver.m */,
+				7F5F64211900705D001E9C3C /* INTUWeakForwarder.h */,
+				7F5F64221900705D001E9C3C /* INTUWeakForwarder.m */,
 				7F32FA4718E3A15500BF3FF4 /* Example */,
 				7F32FA4018E3A15500BF3FF4 /* Frameworks */,
 				7F32FA3F18E3A15500BF3FF4 /* Products */,
@@ -182,6 +187,7 @@
 				7F32FA7B18E3A27B00BF3FF4 /* TestReceiver.m in Sources */,
 				7F32FA5818E3A15500BF3FF4 /* ViewController.m in Sources */,
 				7F32FA5218E3A15500BF3FF4 /* AppDelegate.m in Sources */,
+				7F5F64231900705D001E9C3C /* INTUWeakForwarder.m in Sources */,
 				7F32FA4E18E3A15500BF3FF4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
