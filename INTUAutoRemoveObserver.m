@@ -44,7 +44,7 @@
 @property (nonatomic, copy) NSString* keyPath;
 
 // This is to store the receiver object on any KVO created observer
-@property (nonatomic, weak) NSObject* receiverObject;
+@property (nonatomic, strong) NSObject* receiverObject;
 
 @end
 
