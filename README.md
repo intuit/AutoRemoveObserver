@@ -76,6 +76,6 @@ E.g.:
 									context:nil
 						   onReceiverObject:self];
 
-		N.B.: If the observer is self you will see a error in the log file about the instance being deallocated while key
+		N.B.: If the observer is self you will see an error in the log file about the instance being deallocated while key
 		observers were still registered to it (even though they are removed as a side effect of self getting dealloc'ed)
 		when self is dealloc'ed.
